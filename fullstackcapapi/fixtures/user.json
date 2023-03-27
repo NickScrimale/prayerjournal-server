@@ -1,0 +1,12 @@
+[
+    {
+        "model": "fullstackcapapi.user",
+        "pk": 1,
+        "fields": {
+          "uid": 1,
+          "first_name": "Nick",
+          "last_name": "Scrimale",
+          "profile_image_url": "https://media.licdn.com/dms/image/C5603AQFz6aymAO59Og/profile-displayphoto-shrink_200_200/0/1657303325214?e=1676505600&v=beta&t=QefdKgc8vVGinNSk9N6LmNgW4wuimU3Kqo_3GtmvITo"
+      }
+    }
+]

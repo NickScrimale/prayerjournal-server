@@ -1,0 +1,10 @@
+[
+    {
+        "model": "fullstackcapapi.prayer",
+        "pk": 1,
+        "fields": {
+          "uid": 1,
+          "content": "Who doesnt know it"
+      }
+    }
+]
