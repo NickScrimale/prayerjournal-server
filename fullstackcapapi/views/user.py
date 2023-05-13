@@ -35,7 +35,7 @@ class UserView(ViewSet):
             uid=request.data["uid"],
             first_name=request.data["first_name"],
             last_name=request.data["last_name"],
-            profile_image_url=request.data["image_url"],
+            profile_image_url=request.data["profile_image_url"],
         )
         serializer = UserSerializer(user)
         return Response(serializer.data)
@@ -50,7 +50,7 @@ class UserView(ViewSet):
         user.uid = request.data["uid"]
         user.first_name = request.data["first_name"]
         user.last_name = request.data["last_name"]
-        user.profile_image_url = request.data["image_url"]
+        user.profile_image_url = request.data["profile_image_url"]
 
         user.save()
 
@@ -66,4 +66,4 @@ class UserSerializer(serializers.ModelSerializer):
     """"JSON serializer for users"""
     class Meta:
         model = User
-        fields = ('id', 'uid', 'first_name', 'last_name', 'username', 'profile_image_url', 'email')
+        fields = ('id', 'uid', 'first_name', 'last_name', 'profile_image_url')

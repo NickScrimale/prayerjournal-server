@@ -18,13 +18,14 @@ from rest_framework import routers
 from django.contrib import admin
 from django.urls import path
 
-from fullstackcapapi.views import PrayView, VerseView, VersionView, UserView, register_user, check_user
+from fullstackcapapi.views import PrayView, VerseView, VersionView, UserView, LikeView, register_user, check_user
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'prayers', PrayView, 'prayer')
 router.register(r'verses', VerseView, 'verse')
 router.register(r'versions', VersionView, 'version')
 router.register(r'users', UserView, 'user')
+router.register(r'userlikes', LikeView, 'userlike')
 
 urlpatterns = [
     # Requests to http://localhost:8000/register will be routed to the register_user function

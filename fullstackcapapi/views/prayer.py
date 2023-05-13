@@ -19,6 +19,18 @@ class PrayView(ViewSet):
         serializer = PrayerSerializer(prayers, many=True)
         return Response(serializer.data)
     
+    def create(self, request):
+        user = User.objects.get(id=request.data["uid"])
+        prayer = Prayer.objects.create(
+            uid = user,
+            content = request.data["content"],
+            pub_date = request.data["pub_date"]
+        )
+            
+        serializer = PrayerSerializer(prayer)
+        return Response(serializer.data)
+            
+        
     def update(self, request, pk):
         
         prayer = Prayer.objects.get(pk=pk)
