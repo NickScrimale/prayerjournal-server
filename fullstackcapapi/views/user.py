@@ -8,7 +8,7 @@ class UserView(ViewSet):
         """Handle GET requests for single user
         """
         try:
-            user = User.objects.get(pk=pk)
+            user = User.objects.get(uid=pk)
             serializer = UserSerializer(user)
             return Response(serializer.data)
         except User.DoesNotExist as ex:

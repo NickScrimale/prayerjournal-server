@@ -3,12 +3,11 @@
         "model": "fullstackcapapi.verse",
         "pk": 1,
         "fields": {
-          "user_id": 1,
+          "uid": 1,
           "version_id": 1,
           "verse": "John 3:16",
-          "pub_date": "2022-12-12",
-          "content": "Who doesnt know it",
-          "liked_id": 1
+          "content": "Who doesnt know it"
+
           
       }
     }

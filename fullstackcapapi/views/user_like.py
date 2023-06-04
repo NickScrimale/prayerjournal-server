@@ -22,8 +22,11 @@ class LikeView(ViewSet):
     def list(self, request):
         user_likes = UserLike.objects.all()
         verse = request.query_params.get('verse', None)
+        user = request.query_params.get('user', None)
         if verse is not None:
             user_likes = user_likes.filter(verse_id=verse)
+        if user is not None:
+            user_likes = user_likes.filter(user_id=user)
 
         serializer = UserLikeSerializer(user_likes, many=True)
         return Response(serializer.data)
@@ -35,7 +38,7 @@ class LikeView(ViewSet):
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
     def create(self, request):
-        user = User.objects.get(id=request.data["uid"])
+        user = User.objects.get(id=request.data["user_id"])
         verse = Verse.objects.get(pk=request.data["verse_id"])
 
         user_like = UserLike.objects.create(
