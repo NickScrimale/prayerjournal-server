@@ -35,7 +35,7 @@ def register_user(request):
     data = {
             'id': user.id,
             'uid': user.uid,
-            'first_name': user.bio,
+            'first_name': user.first_name,
             'last_name': user.last_name,
             'profile_image_url': user.profile_image_url
     }
