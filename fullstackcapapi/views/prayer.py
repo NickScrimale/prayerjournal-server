@@ -36,7 +36,7 @@ class PrayView(ViewSet):
         prayer = Prayer.objects.get(pk=pk)
         prayer.uid = User.objects.get(id=request.data["uid"])
         prayer.content = request.data["content"]
-        prayer.publ_date = request.data["pub_date"]
+        prayer.pub_date = request.data["pub_date"]
         prayer.save()
 
         serializer = PrayerSerializer(prayer)

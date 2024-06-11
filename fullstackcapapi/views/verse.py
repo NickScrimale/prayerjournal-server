@@ -23,9 +23,9 @@ class VerseView(ViewSet):
         if verse_user is not None:
             verses = verses.filter(user_id=verse_user)
 
-        verse_like = request.query_params.get('liked', None)
-        if verse_like is not None:
-            verses = verses.filter(liked_id=verse_like)
+        # verse_like = request.query_params.get('liked', None)
+        # if verse_like is not None:
+        #     verses = verses.filter(liked_id=verse_like)
 
         serializer = VerseSerializer(verses, many=True)
         return Response(serializer.data)
@@ -40,7 +40,7 @@ class VerseView(ViewSet):
         
     def create(self, request):
         """Handle POST requests for a single post"""
-        user = User.objects.get(id=request.data["user_id"])
+        user = User.objects.get(id=request.data["uid"])
         version = Version.objects.get(id=request.data["version_id"])
         verse = Verse.objects.create(
             verse = request.data["verse"],
@@ -54,7 +54,7 @@ class VerseView(ViewSet):
     def update(self, request, pk):
         "Handle PUT requests for a single post"""
         verse = Verse.objects.get(pk=pk)
-        verse.user_id = User.objects.get(id=request.data["user_id"])
+        verse.uid = User.objects.get(id=request.data["uid"])
         verse.verse = request.data["verse"]
         verse.version_id = Version.objects.get(id=request.data["version_id"])
         verse.content = request.data["content"]
