@@ -1,1 +1,1 @@
-web: gunicorn --config gunicorn.conf.py fullstackcap.wsgi
+web: gunicorn fullstackcap.wsgi --log-file -
