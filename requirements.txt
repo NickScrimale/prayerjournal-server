@@ -1,5 +1,0 @@
-django>=4.1.6
-gunicorn>=23,<24
-dj-database-url>=2,<3
-whitenoise[brotli]>=6,<7
-waitress-serve>=3.0.2
