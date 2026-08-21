@@ -1,1 +1,1 @@
-web: gunicorn fullstackcap:app
+web: gunicorn prayer-journal-server:app
