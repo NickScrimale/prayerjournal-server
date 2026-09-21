@@ -1,1 +1,1 @@
-web: gunicorn prayer-journal-server:app
+web: python manage.py runserver 8000
