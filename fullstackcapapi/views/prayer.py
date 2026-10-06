@@ -33,7 +33,7 @@ class PrayView(ViewSet):
         
     def update(self, request, pk):
         
-        prayer = Prayer.objects.get(pk=pk)
+        prayer = Prayer.objects.get(pk=pk)  # ty: ignore[unresolved-attribute]
         prayer.uid = User.objects.get(id=request.data["uid"])
         prayer.content = request.data["content"]
         prayer.pub_date = request.data["pub_date"]
