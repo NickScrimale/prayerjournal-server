@@ -1,5 +1,6 @@
 from django.db  import models
 
+
 class User(models.Model):
     '''Class representing User'''
     uid = models.CharField(max_length=50)
