@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from fullstackcapapi.models import Prayer, User
 
+
 class PrayView(ViewSet):
     def retrieve(self, request, pk):
         try:
