@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from fullstackcapapi.models import User
 
-
 class UserView(ViewSet):
     def retrieve(self, request, pk):
         """Handle GET requests for single user
