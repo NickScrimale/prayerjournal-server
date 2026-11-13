@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from fullstackcapapi.models import Verse, User, Version
 
+
 class VerseSerializer(serializers.ModelSerializer):
         class Meta:
             model = Verse
